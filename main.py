@@ -3,7 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Load Movie dataset 'movie-recommendation' on Kaggle
-df = pd.read_csv('/kaggle/input/movie-recommendation/movie.csv')
+df = pd.read_csv('movie.csv')
 
 
 # Feature Extraction
@@ -33,7 +33,7 @@ def recommend_movies(title, cosine_sim=cosine_sim):
     # Return the top 3 most similar movies
     return df['title'].iloc[movie_indices]
 
-# Example Usage:
-recommended_movies = recommend_movies('Pocahontas (1995)')
-print("Movies similar to 'Pocahontas (1995)':")
-print(recommended_movies)
+
+
+user_input = input("Enter a movie")
+print(recommend_movies(user_input))
